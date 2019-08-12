@@ -12,6 +12,7 @@ import {
   Quote,
   Slide,
   Text,
+  S
 } from 'spectacle';
 
 // Import theme
@@ -35,6 +36,7 @@ const theme = createTheme(
 
 const Presentation = () => (
   <Deck
+    contentWidth={800}
     transition={['fade']}
     theme={theme}
     transitionDuration={300}
@@ -51,9 +53,36 @@ const Presentation = () => (
       </Text>
     </Slide>
     <Slide>
-      <Heading>
+      <Heading size={1} textAlign="left">
         What?
       </Heading>
+      <List>
+        <ListItem>
+          Set of utility functions to manage <S type="bold">side effects</S> without using class components. 
+        </ListItem>
+        <ListItem>
+          Already available from React 16.8.
+        </ListItem>
+      </List>
+    </Slide>
+    <Slide>
+      <Heading size={1} textAlign="left">
+        Why?
+      </Heading>
+      <Text textAlign="left">
+        In React, the class components have several shortcomings: 
+      </Text>
+      <List>
+        <ListItem>
+          The <code>class</code> reserved word <S type="italic">lies</S>.
+        </ListItem>
+        <ListItem>
+          They involve the use of <code>this</code>.
+        </ListItem>
+        <ListItem>
+          Logic is organised by lifecycle stage and not by domain. 
+        </ListItem>
+      </List>
     </Slide>
     <Slide bgColor="tertiary">
       <Heading size={6} textColor="primary" caps>
