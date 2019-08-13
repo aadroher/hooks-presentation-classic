@@ -10,4 +10,7 @@ class Rectangle {
 }
 
 const r = new Rectangle(3, 4);
-console.log(r.getArea());
+const getArea = r.getArea;
+console.log(getArea());
+
+// TypeError: Cannot read property 'width' of undefined

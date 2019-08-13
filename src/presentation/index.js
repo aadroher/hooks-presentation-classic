@@ -2,7 +2,8 @@
 // Import React
 import React from 'react';
 
-import classExample0 from '!raw-loader!./code/class-example-0.js'
+import thisExample0 from '!raw-loader!./code/this-example-0.js';
+import thisExample1 from '!raw-loader!./code/this-example-1.js';
 
 // Import Spectacle Core tags
 import {
@@ -17,13 +18,11 @@ import {
   Quote,
   Slide,
   Text,
-  S
+  S,
 } from 'spectacle';
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
-
-console.log({classExample0})
 
 // Require CSS
 require('normalize.css');
@@ -43,32 +42,34 @@ const theme = createTheme(
 
 const Presentation = () => (
   <Deck
-    contentWidth={800}
+    contentWidth={1080}
     transition={['fade']}
     theme={theme}
     transitionDuration={300}
   >
     <Slide bgColor="primary">
       <Heading size={1} fit caps lineHeight={1} textColor="secondary">
-          React Hooks: What and Why.
+        React Hooks: What and Why.
       </Heading>
-      <Text margin="10px 0 0" textColor="tertiary" size={1} >
+      <Text margin="10px 0 0" textColor="tertiary" size={1}>
         Armand Adroher
       </Text>
-      <Text margin="10px 0 0" textColor="tertiary" size={1} >
-        Software Engineer at BBC
+      <Text margin="10px 0 0" textColor="tertiary" size={1}>
+        Software Engineer at BBC Education
       </Text>
+    </Slide>
+    <Slide>
+      <Heading>Full disclosure</Heading>
     </Slide>
     <Slide>
       <Heading size={4} textColor="tertiary" textAlign="left">
         What?
       </Heading>
       <List>
+        <ListItem>Already available from React 16.8.</ListItem>
         <ListItem>
-          Set of utility functions to manage <S type="bold">side effects</S> without using class components. 
-        </ListItem>
-        <ListItem>
-          Already available from React 16.8.
+          Set of utility functions to manage <S type="bold">side effects</S>{' '}
+          without using class components.
         </ListItem>
       </List>
     </Slide>
@@ -76,58 +77,64 @@ const Presentation = () => (
       <Heading size={4} textColor="tertiary" textAlign="left">
         Why?
       </Heading>
-      <Text textAlign="left">
-        In React, the class components have several shortcomings: 
-      </Text>
+      <Text textAlign="left">Class components present some difficulties:</Text>
       <List>
         <ListItem>
           The <Code>class</Code> reserved word <S type="italic">lies</S>.
         </ListItem>
         <ListItem>
-          Involve the use of <Code>this</Code>.
+          They involve the use of <Code>this</Code>.
         </ListItem>
-        <ListItem>
-          Code is organised by lifecycle stage and not by domain. 
-        </ListItem>
-        <ListItem>
-          Poor option to manage state
-        </ListItem>
+        <ListItem>Code is organised by the lifecycle.</ListItem>
+        <ListItem>Poor option to manage the state.</ListItem>
       </List>
     </Slide>
     <Slide>
       <Heading size={4} textColor="tertiary" textAlign="left">
         Classes in Javascript?
       </Heading>
-      <CodePane lang="javascript" source={classExample0} />
     </Slide>
     <Slide>
       <Heading size={4} textColor="tertiary" textAlign="left">
-        What is this?
+        What is <S type="italic">this</S>?
       </Heading>
-      <Text>
-        Bindings
-      </Text>
-      <CodePane lang="javascript" source={classExample0} />
+      <CodePane textSize="24px" lang="javascript" source={thisExample0} />
     </Slide>
     <Slide>
       <Heading size={4} textColor="tertiary" textAlign="left">
-        Nested containers
+        What is <S type="italic">this</S> (bound)?
       </Heading>
-      <Text>
-        Bindings
-      </Text>
+      <CodePane textSize="24px" lang="javascript" source={thisExample1} />
+    </Slide>
+    <Slide>
+      <Heading size={4} textColor="tertiary" textAlign="left">
+        Where are my callbacks?
+      </Heading>
+    </Slide>
+    <Slide>
+      <Heading size={4} textColor="tertiary" textAlign="left">
+        Deeply nested
+      </Heading>
     </Slide>
     <Slide>
       <Heading size={4} textColor="tertiary" textAlign="left">
         Basic hooks
       </Heading>
-      <Text>
-        <Code>useState</Code> and <Code>useEffect</Code>
-      </Text>
+      <List>
+        <ListItem>
+          <Code>useState</Code>
+        </ListItem>
+        <ListItem>
+          <Code>useEffect</Code>
+        </ListItem>
+        <ListItem>
+          <Code>useContext</Code>
+        </ListItem>
+      </List>
     </Slide>
     <Slide>
       <Heading size={4} textColor="tertiary" textAlign="left">
-        useState
+        <Code>useState</Code>
       </Heading>
       <Text>
         <Code>useState</Code>
@@ -135,52 +142,15 @@ const Presentation = () => (
     </Slide>
     <Slide>
       <Heading size={4} textColor="tertiary" textAlign="left">
-        useEffect
+        <Code>useEffect</Code>
       </Heading>
       <Text>
         <Code>useEffect</Code>
       </Text>
     </Slide>
-    {/* <Slide bgColor="tertiary">
-      <Heading size={6} textColor="primary" caps>
-        Typography
-      </Heading>
-      <Heading size={1} textColor="secondary">
-        Heading 1
-      </Heading>
-      <Heading size={2} textColor="secondary">
-        Heading 2
-      </Heading>
-      <Heading size={3} textColor="secondary">
-        Heading 3
-      </Heading>
-      <Heading size={4} textColor="secondary">
-        Heading 4
-      </Heading>
-      <Heading size={5} textColor="secondary">
-        Heading 5
-      </Heading>
-      <Text size={6} textColor="secondary">
-        Standard text
-      </Text>
+    <Slide>
+      <Heading>Thanks!</Heading>
     </Slide>
-    <Slide bgColor="primary" textColor="tertiary">
-      <Heading size={6} textColor="secondary" caps>
-        Standard List
-      </Heading>
-      <List>
-        <ListItem>Item 1</ListItem>
-        <ListItem>Item 2</ListItem>
-        <ListItem>Item 3</ListItem>
-        <ListItem>Item 4</ListItem>
-      </List>
-    </Slide>
-    <Slide bgColor="secondary" textColor="primary">
-      <BlockQuote>
-        <Quote>Example Quote</Quote>
-        <Cite>Author</Cite>
-      </BlockQuote>
-    </Slide> */}
   </Deck>
 );
 

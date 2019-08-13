@@ -2,6 +2,8 @@ class Rectangle {
   constructor(width, height) {
     this.width = width;
     this.height = height;
+
+    this.getArea = this.getArea.bind(this);
   }
 
   getArea() {
@@ -10,4 +12,7 @@ class Rectangle {
 }
 
 const r = new Rectangle(3, 4);
-console.log(r.getArea());
+const getArea = r.getArea;
+console.log(getArea());
+
+// 12
