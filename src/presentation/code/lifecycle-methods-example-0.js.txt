@@ -1,0 +1,14 @@
+class SomeComponent extends React.Component {
+  componentDidMount() {
+    setupSomethingA();
+    setupSomethingB();
+  }
+
+  componentDidUpdate() {
+    updateSomethingB();
+  }
+
+  componentWillUnmount() {
+    tearDownSomethingA();
+  }
+}
