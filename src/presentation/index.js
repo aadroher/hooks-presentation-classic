@@ -1,10 +1,15 @@
+/* eslint-disable import/no-webpack-loader-syntax */
 // Import React
 import React from 'react';
+
+import classExample0 from '!raw-loader!./code/class-example-0.js'
 
 // Import Spectacle Core tags
 import {
   BlockQuote,
   Cite,
+  Code,
+  CodePane,
   Deck,
   Heading,
   ListItem,
@@ -17,6 +22,8 @@ import {
 
 // Import theme
 import createTheme from 'spectacle/lib/themes/default';
+
+console.log({classExample0})
 
 // Require CSS
 require('normalize.css');
@@ -53,7 +60,7 @@ const Presentation = () => (
       </Text>
     </Slide>
     <Slide>
-      <Heading size={1} textAlign="left">
+      <Heading size={4} textColor="tertiary" textAlign="left">
         What?
       </Heading>
       <List>
@@ -66,7 +73,7 @@ const Presentation = () => (
       </List>
     </Slide>
     <Slide>
-      <Heading size={1} textAlign="left">
+      <Heading size={4} textColor="tertiary" textAlign="left">
         Why?
       </Heading>
       <Text textAlign="left">
@@ -74,17 +81,67 @@ const Presentation = () => (
       </Text>
       <List>
         <ListItem>
-          The <code>class</code> reserved word <S type="italic">lies</S>.
+          The <Code>class</Code> reserved word <S type="italic">lies</S>.
         </ListItem>
         <ListItem>
-          They involve the use of <code>this</code>.
+          Involve the use of <Code>this</Code>.
         </ListItem>
         <ListItem>
-          Logic is organised by lifecycle stage and not by domain. 
+          Code is organised by lifecycle stage and not by domain. 
+        </ListItem>
+        <ListItem>
+          Poor option to manage state
         </ListItem>
       </List>
     </Slide>
-    <Slide bgColor="tertiary">
+    <Slide>
+      <Heading size={4} textColor="tertiary" textAlign="left">
+        Classes in Javascript?
+      </Heading>
+      <CodePane lang="javascript" source={classExample0} />
+    </Slide>
+    <Slide>
+      <Heading size={4} textColor="tertiary" textAlign="left">
+        What is this?
+      </Heading>
+      <Text>
+        Bindings
+      </Text>
+      <CodePane lang="javascript" source={classExample0} />
+    </Slide>
+    <Slide>
+      <Heading size={4} textColor="tertiary" textAlign="left">
+        Nested containers
+      </Heading>
+      <Text>
+        Bindings
+      </Text>
+    </Slide>
+    <Slide>
+      <Heading size={4} textColor="tertiary" textAlign="left">
+        Basic hooks
+      </Heading>
+      <Text>
+        <Code>useState</Code> and <Code>useEffect</Code>
+      </Text>
+    </Slide>
+    <Slide>
+      <Heading size={4} textColor="tertiary" textAlign="left">
+        useState
+      </Heading>
+      <Text>
+        <Code>useState</Code>
+      </Text>
+    </Slide>
+    <Slide>
+      <Heading size={4} textColor="tertiary" textAlign="left">
+        useEffect
+      </Heading>
+      <Text>
+        <Code>useEffect</Code>
+      </Text>
+    </Slide>
+    {/* <Slide bgColor="tertiary">
       <Heading size={6} textColor="primary" caps>
         Typography
       </Heading>
@@ -123,7 +180,7 @@ const Presentation = () => (
         <Quote>Example Quote</Quote>
         <Cite>Author</Cite>
       </BlockQuote>
-    </Slide>
+    </Slide> */}
   </Deck>
 );
 
