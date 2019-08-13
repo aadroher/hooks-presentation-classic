@@ -9,5 +9,9 @@ class Rectangle {
   }
 }
 
-const r = new Rectangle(3, 4);
-console.log(r.getArea());
+const a = new Rectangle(3, 4);
+const b = new Rectangle(3, 5);
+console.log(a.getArea());
+// 12
+console.log(b.getArea());
+// 15

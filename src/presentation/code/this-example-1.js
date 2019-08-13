@@ -14,5 +14,4 @@ class Rectangle {
 const r = new Rectangle(3, 4);
 const getArea = r.getArea;
 console.log(getArea());
-
 // 12
