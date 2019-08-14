@@ -97,7 +97,7 @@ const Presentation = () => (
       <Text textAlign="left">Class components present some difficulties:</Text>
       <List>
         <ListItem>
-          The <Code>class</Code> reserved word <S type="italic">lies</S>.
+          The <Code>class</Code> reserved word is syntactic sugar.
         </ListItem>
         <ListItem>
           They involve the use of <Code>this</Code>.
